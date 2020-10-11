@@ -1,0 +1,22 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Folder Include="Aspects\PostSharp\CacheAspects\" />
+    <Folder Include="Aspects\PostSharp\LogAspects\" />
+    <Folder Include="Aspects\PostSharp\ValidationAspects\" />
+    <Folder Include="Aspects\PostSharp\TransactionAspects\" />
+    <Folder Include="Business\" />
+    <Folder Include="CrossCuttingConcerns\" />
+    <Folder Include="Utilities\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="3.1.8" />
+    <PackageReference Include="NHibernate" Version="5.3.3" />
+  </ItemGroup>
+
+</Project>
