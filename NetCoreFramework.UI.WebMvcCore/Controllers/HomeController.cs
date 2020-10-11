@@ -5,6 +5,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
+using NetCoreFramework.Repository.Business.Abstract;
 using NetCoreFramework.UI.WebMvcCore.Models;
 
 namespace NetCoreFramework.UI.WebMvcCore.Controllers
@@ -13,14 +14,23 @@ namespace NetCoreFramework.UI.WebMvcCore.Controllers
     {
         private readonly ILogger<HomeController> _logger;
 
-        public HomeController(ILogger<HomeController> logger)
+        private readonly ICitiesOfCountriesService _dbViewService;
+
+        public HomeController(ILogger<HomeController> logger, ICitiesOfCountriesService dbViewService)
         {
             _logger = logger;
+            _dbViewService = dbViewService;
         }
 
         public IActionResult Index()
         {
-            return View();
+            var test = _dbViewService.GetAll();
+
+            var homeViewModel = new HomeViewModel
+            {
+         
+            };
+            return View(homeViewModel);
         }
 
         public IActionResult Privacy()

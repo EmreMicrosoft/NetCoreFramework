@@ -21,7 +21,7 @@ namespace NetCoreFramework.Core.DataAccess.NHibernate
 
 
         // ADD
-        public void Create(TEntity entity)
+        public void Add(TEntity entity)
         {
             _nHibernateHelper.OpenSession().Save(entity);
 
@@ -31,20 +31,20 @@ namespace NetCoreFramework.Core.DataAccess.NHibernate
         }
 
         // ADD ASYNC
-        public async void CreateAsync(TEntity entity)
+        public async void AddAsync(TEntity entity)
         {
             await _nHibernateHelper.OpenSession().SaveAsync(entity);
         }
 
 
         // ADD LIST
-        public void CreateRange(List<TEntity> entities)
+        public void AddList(List<TEntity> entities)
         {
             _nHibernateHelper.OpenSession().Save(entities);
         }
 
         //ADD LIST ASYNC
-        public async void CreateRangeAsync(List<TEntity> entities)
+        public async void AddListAsync(List<TEntity> entities)
         {
             await _nHibernateHelper.OpenSession().SaveAsync(entities);
         }
@@ -53,13 +53,13 @@ namespace NetCoreFramework.Core.DataAccess.NHibernate
 
 
         // GET
-        public TEntity Read(Expression<Func<TEntity, bool>> filter)
+        public TEntity Get(Expression<Func<TEntity, bool>> filter)
         {
             return _nHibernateHelper.OpenSession().Query<TEntity>().SingleOrDefault(filter);
         }
 
         // GET ASYNC
-        public async Task<TEntity> ReadAsync(Expression<Func<TEntity, bool>> filter)
+        public async Task<TEntity> GetAsync(Expression<Func<TEntity, bool>> filter)
         {
             return await _nHibernateHelper.OpenSession()
                             .Query<TEntity>().SingleOrDefaultAsync(filter);
@@ -67,7 +67,7 @@ namespace NetCoreFramework.Core.DataAccess.NHibernate
 
 
         // GET LIST
-        public List<TEntity> ReadRange(Expression<Func<TEntity, bool>> filter = null)
+        public List<TEntity> GetList(Expression<Func<TEntity, bool>> filter = null)
         {
             return filter == null
                 ? _nHibernateHelper.OpenSession().Query<TEntity>().ToList()
@@ -100,13 +100,13 @@ namespace NetCoreFramework.Core.DataAccess.NHibernate
 
 
         // UPDATE LIST
-        public void UpdateRange(List<TEntity> entities)
+        public void UpdateList(List<TEntity> entities)
         {
             _nHibernateHelper.OpenSession().Update(entities);
         }
 
         // UPDATE LIST ASYNC
-        public void UpdateRangeAsync(List<TEntity> entities)
+        public void UpdateListAsync(List<TEntity> entities)
         {
             _nHibernateHelper.OpenSession().UpdateAsync(entities);
         }
@@ -128,13 +128,13 @@ namespace NetCoreFramework.Core.DataAccess.NHibernate
 
 
         // DELETE LIST
-        public void DeleteRange(List<TEntity> entities)
+        public void DeleteList(List<TEntity> entities)
         {
             _nHibernateHelper.OpenSession().Delete(entities);
         }
 
         // DELETE LIST ASYNC
-        public async void DeleteRangeAsync(List<TEntity> entities)
+        public async void DeleteListAsync(List<TEntity> entities)
         {
             await _nHibernateHelper.OpenSession().DeleteAsync(entities);
         }

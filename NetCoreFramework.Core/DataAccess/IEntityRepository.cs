@@ -9,21 +9,21 @@ namespace NetCoreFramework.Core.DataAccess
     public interface IEntityRepository<T> where T : class, IEntity, new()
     {
         // ADD
-        void Create(T entity);
-        void CreateAsync(T entity);
+        void Add(T entity);
+        void AddAsync(T entity);
 
         // ADD LIST
-        void CreateRange(List<T> entities);
-        void CreateRangeAsync(List<T> entities);
+        void AddList(List<T> entities);
+        void AddListAsync(List<T> entities);
 
 
         // GET
-        T Read(Expression<Func<T, bool>> filter);
-        Task<T> ReadAsync(Expression<Func<T, bool>> filter);
+        T Get(Expression<Func<T, bool>> filter);
+        Task<T> GetAsync(Expression<Func<T, bool>> filter);
 
         // GET LIST
-        List<T> ReadRange(Expression<Func<T, bool>> filter = null);
-        //Task<List<T>> ReadRangeAsync(Expression<Func<T, bool>> filter = null);
+        List<T> GetList(Expression<Func<T, bool>> filter = null);
+        //Task<List<T>> GetListAsync(Expression<Func<T, bool>> filter = null);
 
 
         // UPDATE
@@ -31,8 +31,8 @@ namespace NetCoreFramework.Core.DataAccess
         void UpdateAsync(T entity);
 
         // UPDATE LIST
-        void UpdateRange(List<T> entities);
-        void UpdateRangeAsync(List<T> entities);
+        void UpdateList(List<T> entities);
+        void UpdateListAsync(List<T> entities);
 
 
         // DELETE
@@ -40,7 +40,7 @@ namespace NetCoreFramework.Core.DataAccess
         void DeleteAsync(T entity);
 
         // DELETE LIST
-        void DeleteRange(List<T> entities);
-        void DeleteRangeAsync(List<T> entities);
+        void DeleteList(List<T> entities);
+        void DeleteListAsync(List<T> entities);
     }
 }

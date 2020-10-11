@@ -7,8 +7,10 @@ namespace NetCoreFramework.Repository.Entities.Concrete
 {
     public sealed class Country : IEntity
     {
-        public Country() => Cities = new HashSet<City>();
-        
+        public Country()
+        {
+            Cities = new HashSet<City>();
+        }
 
         [Key]
         public short Id { get; set; }

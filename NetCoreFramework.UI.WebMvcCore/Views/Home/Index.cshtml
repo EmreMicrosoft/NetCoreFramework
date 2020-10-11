@@ -1,8 +1,26 @@
-﻿@{
+﻿@model NetCoreFramework.UI.WebMvcCore.Models.HomeViewModel
+@{
     ViewData["Title"] = "Home Page";
 }
 
 <div class="text-center">
     <h1 class="display-4">Welcome</h1>
     <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+</div>
+
+<div>
+    <ul>
+    @foreach (var country in Model.Countries)
+    {
+        <li>
+            <h4>@country.Name</h4>
+            <ul>
+            @foreach (var city in Model.Cities)
+            {
+                <li><h6>@city.Name</h6></li>
+            }
+            </ul>
+        </li>
+    }
+    </ul>
 </div>

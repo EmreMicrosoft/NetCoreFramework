@@ -1,6 +1,10 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using NetCoreFramework.Core.Aspects.Postsharp.CacheAspects;
+using NetCoreFramework.Core.Aspects.Postsharp.LogAspects;
+using NetCoreFramework.Core.CrossCuttingConcerns.Caching.Microsoft;
+using NetCoreFramework.Core.CrossCuttingConcerns.Logging.Log4Net.Loggers;
 using NetCoreFramework.Core.DataAccess;
 using NetCoreFramework.Repository.Business.Abstract;
 using NetCoreFramework.Repository.DataAccess.Abstract;
@@ -19,15 +23,17 @@ namespace NetCoreFramework.Repository.Business.Concrete
             _queryableRepository = queryableRepository;
         }
 
-
+        [CacheAspect(typeof(MemoryCacheManager), 30)]
+        [LogAspect(typeof(DatabaseLogger))]
+        [LogAspect(typeof(FileLogger))]
         public List<Country> GetAll()
         {
-            return _countryDal.ReadRange();
+            return _countryDal.GetList();
         }
 
         public Country GetById(short id)
         {
-            return _countryDal.Read(x => x.Id == id);
+            return _countryDal.Get(x => x.Id == id);
         }
 
         public IQueryable<Country> QueryableList(/*short id*/)
@@ -37,19 +43,19 @@ namespace NetCoreFramework.Repository.Business.Concrete
             return _queryableRepository.Table;
         }
 
-        public async void Add(Country entity)
+        public async void AddAsync(Country entity)
         {
-            await Task.Run(() => _countryDal.CreateAsync(entity));
+            await Task.Run(() => _countryDal.AddAsync(entity));
         }
 
-        public async void Update(Country entity)
+        public async void UpdateAsync(Country entity)
         {
             await Task.Run(() => _countryDal.UpdateAsync(entity));
         }
 
         public void TransactionalOperation(Country entity1, Country entity2)
         {
-            throw new System.NotImplementedException();
+            // TODO
         }
     }
 }

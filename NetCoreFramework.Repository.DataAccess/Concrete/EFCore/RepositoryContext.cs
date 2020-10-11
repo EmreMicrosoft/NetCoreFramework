@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using NetCoreFramework.Repository.Entities.ComplexTypes;
 using NetCoreFramework.Repository.Entities.Concrete;
 using NetCoreFramework.Repository.Entities.Configurations;
 
@@ -15,6 +16,7 @@ namespace NetCoreFramework.Repository.DataAccess.Concrete.EFCore
         {
         }
 
+        public virtual DbSet<CitiesOfCountries> CitiesOfCountries { get; set; }
         public virtual DbSet<City> Cities { get; set; }
         public virtual DbSet<Country> Countries { get; set; }
 
@@ -29,6 +31,7 @@ namespace NetCoreFramework.Repository.DataAccess.Concrete.EFCore
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            modelBuilder.ApplyConfiguration(new CitiesOfCountriesConfiguration());
             modelBuilder.ApplyConfiguration(new CityConfiguration());
             modelBuilder.ApplyConfiguration(new CountryConfiguration());
 
@@ -37,7 +40,7 @@ namespace NetCoreFramework.Repository.DataAccess.Concrete.EFCore
 
         void OnModelCreatingPartial(ModelBuilder modelBuilder)
         {
-            throw new System.NotImplementedException();
+            // TODO
         }
     }
 }

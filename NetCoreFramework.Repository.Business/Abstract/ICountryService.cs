@@ -10,8 +10,8 @@ namespace NetCoreFramework.Repository.Business.Abstract
 
         Country GetById(short id);
         IQueryable<Country> QueryableList(/*short id*/);
-        void Add(Country entity);
-        void Update(Country entity);
+        void AddAsync(Country entity);
+        void UpdateAsync(Country entity);
 
         void TransactionalOperation(Country entity1, Country entity2);
     }

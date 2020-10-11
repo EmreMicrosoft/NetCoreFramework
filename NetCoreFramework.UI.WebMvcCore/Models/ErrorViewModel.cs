@@ -1,5 +1,3 @@
-using System;
-
 namespace NetCoreFramework.UI.WebMvcCore.Models
 {
     public class ErrorViewModel

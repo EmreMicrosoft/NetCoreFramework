@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Threading.Tasks;
 using NetCoreFramework.Repository.Entities.Concrete;
 
 namespace NetCoreFramework.Repository.Business.Abstract
@@ -6,10 +7,6 @@ namespace NetCoreFramework.Repository.Business.Abstract
     public interface ICityService
     {
             List<City> GetAll();
-            City GetById(int id);
-            void Add(City entity);
-            void Update(City entity);
-
-            void TransactionalOperation(City entity1, City entity2);
+            Task<City> GetById(int id);
     }
 }

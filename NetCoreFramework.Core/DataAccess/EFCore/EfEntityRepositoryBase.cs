@@ -13,7 +13,7 @@ namespace NetCoreFramework.Core.DataAccess.EFCore
         where TContext : DbContext, new()
     {
         // ADD
-        public void Create(TEntity entity)
+        public void Add(TEntity entity)
         {
             using var context = new TContext();
             context.Add(entity);
@@ -21,16 +21,16 @@ namespace NetCoreFramework.Core.DataAccess.EFCore
         }
 
         // ADD ASYNC
-        public async void CreateAsync(TEntity entity)
+        public async void AddAsync(TEntity entity)
         {
             await using var context = new TContext();
             await Task.Run(() => context.AddAsync(entity));
-            context.SaveChanges();
+            await context.SaveChangesAsync();
         }
 
 
         // ADD LIST
-        public void CreateRange(List<TEntity> entities)
+        public void AddList(List<TEntity> entities)
         {
             using var context = new TContext();
             context.AddRange(entities);
@@ -38,25 +38,25 @@ namespace NetCoreFramework.Core.DataAccess.EFCore
         }
 
         // ADD LIST ASYNC
-        public async void CreateRangeAsync(List<TEntity> entities)
+        public async void AddListAsync(List<TEntity> entities)
         {
             await using var context = new TContext();
             await Task.Run(() => context.AddRangeAsync(entities));
-            context.SaveChanges();
+            await context.SaveChangesAsync();
         }
 
 
 
 
         // GET
-        public TEntity Read(Expression<Func<TEntity, bool>> filter)
+        public TEntity Get(Expression<Func<TEntity, bool>> filter)
         {
             using var context = new TContext();
             return context.Set<TEntity>().SingleOrDefault(filter);
         }
 
         // GET ASYNC
-        public async Task<TEntity> ReadAsync(Expression<Func<TEntity, bool>> filter)
+        public async Task<TEntity> GetAsync(Expression<Func<TEntity, bool>> filter)
         {
             await using var context = new TContext();
             return await context.Set<TEntity>().SingleOrDefaultAsync(filter);
@@ -64,7 +64,7 @@ namespace NetCoreFramework.Core.DataAccess.EFCore
 
 
         // GET LIST
-        public List<TEntity> ReadRange(Expression<Func<TEntity, bool>> filter = null)
+        public List<TEntity> GetList(Expression<Func<TEntity, bool>> filter = null)
         {
             using var context = new TContext();
             return filter == null
@@ -72,8 +72,8 @@ namespace NetCoreFramework.Core.DataAccess.EFCore
                 : context.Set<TEntity>().Where(filter).ToList();
         }
 
-        // GET LIST ASYNC
-        //public async Task<List<TEntity>> ReadRangeAsync(Expression<Func<TEntity, bool>> filter = null)
+        //// GET LIST ASYNC
+        //public async Task<List<TEntity>> GetListAsync(Expression<Func<TEntity, bool>> filter = null)
         //{
         //    await using var context = new TContext();
         //    return filter == null
@@ -97,12 +97,12 @@ namespace NetCoreFramework.Core.DataAccess.EFCore
         {
             await using var context = new TContext();
             await Task.Run(() => context.Update(entity));
-            context.SaveChanges();
+            await context.SaveChangesAsync();
         }
 
 
         // UPDATE LIST
-        public void UpdateRange(List<TEntity> entities)
+        public void UpdateList(List<TEntity> entities)
         {
             using var context = new TContext();
             context.UpdateRange(entities);
@@ -110,11 +110,11 @@ namespace NetCoreFramework.Core.DataAccess.EFCore
         }
 
         // UPDATE LIST ASYNC
-        public async void UpdateRangeAsync(List<TEntity> entities)
+        public async void UpdateListAsync(List<TEntity> entities)
         {
             await using var context = new TContext();
             await Task.Run(() => context.UpdateRange(entities));
-            context.SaveChanges();
+            await context.SaveChangesAsync();
         }
 
 
@@ -133,12 +133,12 @@ namespace NetCoreFramework.Core.DataAccess.EFCore
         {
             await using var context = new TContext();
             await Task.Run(() => context.Remove(entity));
-            context.SaveChanges();
+            await context.SaveChangesAsync();
         }
 
 
         // DELETE LIST
-        public void DeleteRange(List<TEntity> entities)
+        public void DeleteList(List<TEntity> entities)
         {
             using var context = new TContext();
             context.RemoveRange(entities);
@@ -146,11 +146,11 @@ namespace NetCoreFramework.Core.DataAccess.EFCore
         }
 
         // DELETE LIST ASYNC
-        public async void DeleteRangeAsync(List<TEntity> entities)
+        public async void DeleteListAsync(List<TEntity> entities)
         {
             await using var context = new TContext();
             await Task.Run(() => context.RemoveRange(entities));
-            context.SaveChanges();
+            await context.SaveChangesAsync();
         }
     }
 }
