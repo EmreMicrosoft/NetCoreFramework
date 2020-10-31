@@ -1,0 +1,15 @@
+﻿@model NetCoreFramework.UI.WebMvcCore.Models.CityViewModel
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewData["Title"] = "City Page";
+}
+
+
+<div>
+    <h2>City Index</h2>
+    @foreach (var city in Model.Cities)
+    {
+        <p>@city.Name</p>
+    }
+</div>

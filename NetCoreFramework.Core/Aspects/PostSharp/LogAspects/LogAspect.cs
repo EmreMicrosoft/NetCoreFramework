@@ -38,7 +38,8 @@ namespace NetCoreFramework.Core.Aspects.Postsharp.LogAspects
 
             try
             {
-                var logParameters = args.Method.GetParameters().Select((t, i) => new LogParameter
+                var logParameters = args.Method.GetParameters()
+                    .Select((t, i) => new LogParameter
                 {
                     Name = t.Name,
                     Type = t.ParameterType.Name,

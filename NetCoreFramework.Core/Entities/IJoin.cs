@@ -1,6 +1,6 @@
 ﻿namespace NetCoreFramework.Core.Entities
 {
-    public interface IJunction
+    public interface IJoin
     {
     }
 }

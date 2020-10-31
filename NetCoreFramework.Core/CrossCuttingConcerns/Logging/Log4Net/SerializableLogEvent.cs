@@ -1,5 +1,5 @@
 ﻿using System;
-using  log4net.Core;
+using log4net.Core;
 
 namespace NetCoreFramework.Core.CrossCuttingConcerns.Logging.Log4Net
 {
@@ -16,7 +16,5 @@ namespace NetCoreFramework.Core.CrossCuttingConcerns.Logging.Log4Net
 
         public string UserName => _loggingEvent.UserName;
         public object MessageObject => _loggingEvent.MessageObject;
-
-
     }
 }
