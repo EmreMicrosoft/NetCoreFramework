@@ -1,5 +1,10 @@
+using System.IO;
+using System.Reflection;
+using log4net;
+using log4net.Config;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Hosting;
+using Microsoft.Extensions.Logging;
 
 namespace NetCoreFramework.UI.WebMvcCore
 {
@@ -7,6 +12,8 @@ namespace NetCoreFramework.UI.WebMvcCore
     {
         public static void Main(string[] args)
         {
+            var logRepository = LogManager.GetRepository(Assembly.GetEntryAssembly());
+            XmlConfigurator.Configure(logRepository, new FileInfo("log4net.config"));
             CreateHostBuilder(args).Build().Run();
         }
 
@@ -15,6 +22,11 @@ namespace NetCoreFramework.UI.WebMvcCore
                 .ConfigureWebHostDefaults(webBuilder =>
                 {
                     webBuilder.UseStartup<Startup>();
+                })
+                .ConfigureLogging(builder =>
+                {
+                    builder.SetMinimumLevel(LogLevel.Trace);
+                    builder.AddLog4Net();
                 });
     }
 }
