@@ -22,11 +22,6 @@ namespace NetCoreFramework.UI.WebMvcCore
                 .ConfigureWebHostDefaults(webBuilder =>
                 {
                     webBuilder.UseStartup<Startup>();
-                })
-                .ConfigureLogging(builder =>
-                {
-                    builder.SetMinimumLevel(LogLevel.Trace);
-                    builder.AddLog4Net();
                 });
     }
 }
