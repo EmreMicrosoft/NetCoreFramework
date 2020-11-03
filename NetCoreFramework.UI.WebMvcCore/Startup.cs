@@ -1,3 +1,4 @@
+using Autofac;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Hosting;
@@ -6,6 +7,7 @@ using NetCoreFramework.UI.WebMvcCore.Data;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using NetCoreFramework.Repository.Business.DependencyResolvers.Autofac;
 
 namespace NetCoreFramework.UI.WebMvcCore
 {
@@ -14,6 +16,11 @@ namespace NetCoreFramework.UI.WebMvcCore
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
+        }
+
+        public void ConfigureContainer(ContainerBuilder builder)
+        {
+            builder.RegisterModule<BusinessModule>();
         }
 
         public IConfiguration Configuration { get; }
