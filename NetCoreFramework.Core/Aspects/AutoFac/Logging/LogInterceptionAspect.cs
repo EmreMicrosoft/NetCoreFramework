@@ -1,44 +1,42 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using Castle.DynamicProxy;
 using NetCoreFramework.Core.CrossCuttingConcerns.Logging;
 using NetCoreFramework.Core.Utilities.Intercepters;
 
 namespace NetCoreFramework.Core.Aspects.AutoFac.Logging
 {
-  public class LogInterceptionAspect : MethodInterception
-  {
-    private readonly LoggerService _loggerService;
-
-    public LogInterceptionAspect(Type loggerType)
+    public class LogInterceptionAspect : MethodInterception
     {
-      if (loggerType.BaseType != typeof(LoggerService))
-      {
-        throw new Exception("Wrong Logger Type");
-      }
-      _loggerService = (LoggerService)Activator.CreateInstance(loggerType);
-    }
+        private readonly LoggerService _loggerService;
 
-    protected override void OnBefore(IInvocation invocation)
-    {
-      var logParameters = invocation.Method.GetParameters()
-        .Select((t, i) => new LogParameter
+        public LogInterceptionAspect(Type loggerType)
         {
-          Name = t.Name,
-          Type = t.ParameterType.Name,
-          Value = invocation.Arguments[i]
-        }).ToList();
+            if (loggerType.BaseType != typeof(LoggerService))
+                throw new Exception("Wrong Logger Type");
 
-      var logDetail = new LogDetail
-      {
-        FullName = invocation.Method.DeclaringType == null ? null : invocation.Method.DeclaringType.Name,
-        MethodName = invocation.Method.Name,
-        LogParameters = logParameters
-      };
+            _loggerService = (LoggerService)Activator.CreateInstance(loggerType);
+        }
 
-      _loggerService.Debug(logDetail);
+
+        protected override void OnBefore(IInvocation invocation)
+        {
+            var logParameters = invocation.Method.GetParameters()
+              .Select((t, i) => new LogParameter
+              {
+                  Name = t.Name,
+                  Type = t.ParameterType.Name,
+                  Value = invocation.Arguments[i]
+              }).ToList();
+
+            var logDetail = new LogDetail
+            {
+                FullName = invocation.Method.DeclaringType == null ? null : invocation.Method.DeclaringType.Name,
+                MethodName = invocation.Method.Name,
+                LogParameters = logParameters
+            };
+
+            _loggerService.Debug(logDetail);
+        }
     }
-  }
 }
