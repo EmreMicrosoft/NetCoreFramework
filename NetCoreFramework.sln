@@ -11,8 +11,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NetCoreFramework.Repository
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NetCoreFramework.Repository.Business", "NetCoreFramework.Repository.Business\NetCoreFramework.Repository.Business.csproj", "{832D9DD0-4B85-49F2-8F85-A5439CCAA28F}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NetCoreFramework.UI.WebMvcCore", "NetCoreFramework.UI.WebMvcCore\NetCoreFramework.UI.WebMvcCore.csproj", "{FB26A26D-89A1-46A1-B428-7ADD183DFEF5}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{B5C17274-4990-41C7-8D6F-6E4F5B8A9637}"
 	ProjectSection(SolutionItems) = preProject
 		License = License
@@ -41,10 +39,6 @@ Global
 		{832D9DD0-4B85-49F2-8F85-A5439CCAA28F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{832D9DD0-4B85-49F2-8F85-A5439CCAA28F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{832D9DD0-4B85-49F2-8F85-A5439CCAA28F}.Release|Any CPU.Build.0 = Release|Any CPU
-		{FB26A26D-89A1-46A1-B428-7ADD183DFEF5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{FB26A26D-89A1-46A1-B428-7ADD183DFEF5}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{FB26A26D-89A1-46A1-B428-7ADD183DFEF5}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{FB26A26D-89A1-46A1-B428-7ADD183DFEF5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
