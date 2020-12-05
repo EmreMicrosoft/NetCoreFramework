@@ -5,7 +5,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\NetCoreFramework.Core\NetCoreFramework.Core.csproj" />
     <ProjectReference Include="..\NetCoreFramework.Repository.DataAccess\NetCoreFramework.Repository.DataAccess.csproj" />
     <ProjectReference Include="..\NetCoreFramework.Repository.Entities\NetCoreFramework.Repository.Entities.csproj" />
   </ItemGroup>
