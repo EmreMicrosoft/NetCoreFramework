@@ -4,4 +4,10 @@
     <TargetFramework>netcoreapp3.1</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Folder Include="CrossCuttingConcerns\" />
+    <Folder Include="Business\" />
+    <Folder Include="Utilities\" />
+  </ItemGroup>
+
 </Project>
