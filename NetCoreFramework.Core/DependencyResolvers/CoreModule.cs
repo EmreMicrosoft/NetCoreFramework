@@ -6,13 +6,13 @@ using Microsoft.Extensions.DependencyInjection;
 
 namespace NetCoreFramework.Core.DependencyResolvers
 {
-  public class CoreModule : IModule
-  {
-    public void Load(IServiceCollection service)
+    public class CoreModule : IModule
     {
-      service.AddMemoryCache();
-      service.AddSingleton<ICacheManager, MemoryCacheManager>();
-      service.AddSingleton<Stopwatch>();
+        public void Load(IServiceCollection service)
+        {
+            service.AddMemoryCache();
+            service.AddSingleton<ICacheManager, MemoryCacheManager>();
+            service.AddSingleton<Stopwatch>();
+        }
     }
-  }
 }
