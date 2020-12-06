@@ -5,6 +5,6 @@ namespace NetCoreFramework.Repository.Business.Abstract
 {
     public interface ICitiesOfCountriesService
     {
-        List<CitiesOfCountries> GetAll();
+        // List<CitiesOfCountries> GetAll();
     }
 }

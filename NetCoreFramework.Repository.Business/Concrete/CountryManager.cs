@@ -1,11 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using NetCoreFramework.Core.Aspects.Postsharp.CacheAspects;
-using NetCoreFramework.Core.Aspects.Postsharp.LogAspects;
-using NetCoreFramework.Core.Aspects.Postsharp.ValidationAspects;
-using NetCoreFramework.Core.CrossCuttingConcerns.Caching.Microsoft;
-using NetCoreFramework.Core.CrossCuttingConcerns.Logging.Log4Net.Loggers;
 using NetCoreFramework.Core.DataAccess;
 using NetCoreFramework.Repository.Business.Abstract;
 using NetCoreFramework.Repository.Business.ValidationRules.FluentValidation;
@@ -25,9 +20,6 @@ namespace NetCoreFramework.Repository.Business.Concrete
             _queryableRepository = queryableRepository;
         }
 
-        [CacheAspect(typeof(MemoryCacheManager), 30)]
-        [LogAspect(typeof(DatabaseLogger))]
-        [LogAspect(typeof(FileLogger))]
         public List<Country> GetAll()
         {
             return _countryDal.GetList();
@@ -50,7 +42,6 @@ namespace NetCoreFramework.Repository.Business.Concrete
             await Task.Run(() => _countryDal.AddAsync(entity));
         }
 
-        [FluentValidationAspect(typeof(CountryValidator))]
         public async void UpdateAsync(Country entity)
         {
             await Task.Run(() => _countryDal.UpdateAsync(entity));

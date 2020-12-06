@@ -2,7 +2,7 @@
 using NetCoreFramework.Repository.Entities.ComplexTypes;
 using NetCoreFramework.Repository.Entities.Concrete;
 
-namespace NetCoreFramework.Repository.DataAccess.DbContexts
+namespace NetCoreFramework.Repository.DataAccess.Concrete.EFCore.DbContexts
 {
     public partial class RepositoryContext : DbContext
     {

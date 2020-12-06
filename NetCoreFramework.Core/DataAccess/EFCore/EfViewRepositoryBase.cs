@@ -36,7 +36,7 @@ namespace NetCoreFramework.Core.DataAccess.EFCore
                 : context.Set<TEntity>().Where(filter).ToList();
         }
 
-        // GET LIST ASYNC
+        // GET LIST ASYNC (Not Recommended)
         //public async Task<List<TEntity>> GetListAsync(Expression<Func<TEntity, bool>> filter = null)
         //{
         //    await using var context = new TContext();

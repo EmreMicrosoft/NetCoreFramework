@@ -3,7 +3,7 @@ using NetCoreFramework.Repository.Entities.ComplexTypes;
 
 namespace NetCoreFramework.Repository.DataAccess.Abstract
 {
-    public interface ICitiesOfCountriesDal : IViewRepository<CitiesOfCountries>
-    {
-    }
+    //public interface ICitiesOfCountriesDal : IViewRepository<CitiesOfCountries>
+    //{
+    //}
 }
