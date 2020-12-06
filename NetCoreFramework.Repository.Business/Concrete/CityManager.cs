@@ -14,10 +14,13 @@ namespace NetCoreFramework.Repository.Business.Concrete
         {
             _cityDal = cityDal;
         }
+
+
         public List<City> GetAll()
         {
             return _cityDal.GetList();
         }
+
 
         public async Task<City> GetById(int id)
         {
