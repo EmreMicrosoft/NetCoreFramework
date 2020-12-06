@@ -1,4 +1,9 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System.ComponentModel.DataAnnotations;
+using Moq;
+using NetCoreFramework.Repository.Business.Concrete;
+using NetCoreFramework.Repository.DataAccess.Abstract;
+using NetCoreFramework.Repository.Entities.Concrete;
 
 namespace NetCoreFramework.Repository.Business.Tests
 {
@@ -6,8 +11,26 @@ namespace NetCoreFramework.Repository.Business.Tests
     public class UnitTest1
     {
         [TestMethod]
-        public void TestMethod1()
+        public void GetListTest()
         {
+            var cityManager = new CityManager(new Mock<ICityDal>().Object);
+
+            cityManager.GetAll();
         }
+
+
+        //[TestMethod]
+        //[ExpectedException(typeof(ValidationException))]
+        //public void FluentValidationCheck()
+        //{
+        //    var productDalMock = new Mock<ICityDal>();
+
+        //    var productManager = new CityManager(productDalMock.Object);
+
+        //    productManager.Add(new City
+        //    {
+        //        Name = "Kent"
+        //    });
+        //}
     }
 }

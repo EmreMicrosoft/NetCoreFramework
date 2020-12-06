@@ -8,7 +8,7 @@ using Module = Autofac.Module;
 
 namespace NetCoreFramework.Repository.Business.DependencyResolvers.Autofac
 {
-    public class BusinessModule : Module
+    public class AutofacBusinessModule : Module
     {
         protected override void Load(ContainerBuilder builder)
         {
@@ -20,7 +20,6 @@ namespace NetCoreFramework.Repository.Business.DependencyResolvers.Autofac
 
             //builder.RegisterType<CountryManager>().As<ICountryService>().SingleInstance();
             //builder.RegisterType<CityManager>().As<ICityService>().SingleInstance();
-            
         }
     }
 }
