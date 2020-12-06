@@ -5,7 +5,7 @@ using NetCoreFramework.Repository.DataAccess.Concrete.EFCore;
 
 namespace NetCoreFramework.Repository.DataAccess.DependencyResolvers.Microsoft
 {
-    public class DataAccessModule : IModule
+    public class MicrosoftDataAccessModule : IModule
     {
         public void Load(IServiceCollection service)
         {

@@ -6,9 +6,9 @@ using Microsoft.Extensions.DependencyInjection;
 using NetCoreFramework.Core.DataAccess;
 using NetCoreFramework.Core.DataAccess.EFCore;
 
-namespace NetCoreFramework.Core.DependencyResolvers
+namespace NetCoreFramework.Core.DependencyResolvers.Microsoft
 {
-    public class CoreModule : IModule
+    public class MicrosoftCoreModule : IModule
     {
         public void Load(IServiceCollection service)
         {

@@ -9,8 +9,6 @@ namespace NetCoreFramework.Repository.DataAccess.Tests
         [TestMethod]
         public void TestMethod1()
         {
-
-
             var cityDal = new EfCityDal();
             var cities = cityDal.GetList();
 
