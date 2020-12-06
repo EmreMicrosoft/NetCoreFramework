@@ -1,5 +1,4 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using NetCoreFramework.Repository.Entities.ComplexTypes;
 using NetCoreFramework.Repository.Entities.Concrete;
 
 namespace NetCoreFramework.Repository.DataAccess.Concrete.EFCore.DbContexts
@@ -15,7 +14,6 @@ namespace NetCoreFramework.Repository.DataAccess.Concrete.EFCore.DbContexts
         {
         }
 
-        public virtual DbSet<CitiesOfCountry> CitiesOfCountries { get; set; }
         public virtual DbSet<City> Cities { get; set; }
         public virtual DbSet<Country> Countries { get; set; }
 
@@ -29,20 +27,6 @@ namespace NetCoreFramework.Repository.DataAccess.Concrete.EFCore.DbContexts
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<CitiesOfCountry>(entity =>
-            {
-                entity.HasNoKey();
-
-                entity.ToView("Cities_of_Countries");
-
-                entity.Property(e => e.CodeAlpha2)
-                    .IsUnicode(false)
-                    .IsFixedLength();
-
-                entity.Property(e => e.Expr2).IsUnicode(false);
-
-                entity.Property(e => e.Name).IsUnicode(false);
-            });
 
             modelBuilder.Entity<City>(entity =>
             {
