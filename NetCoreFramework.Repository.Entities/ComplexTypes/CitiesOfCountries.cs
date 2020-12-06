@@ -4,7 +4,7 @@ using NetCoreFramework.Core.Entities;
 
 namespace NetCoreFramework.Repository.Entities.ComplexTypes
 {
-    public class CitiesOfCountries : IView
+    public partial class CitiesOfCountry : IView
     {
         public int Id { get; set; }
         public short CountryId { get; set; }

@@ -5,7 +5,7 @@ using NetCoreFramework.Core.Entities;
 
 namespace NetCoreFramework.Repository.Entities.Concrete
 {
-    public sealed class Country : IEntity
+    public sealed partial class Country : IEntity
     {
         public Country()
         {

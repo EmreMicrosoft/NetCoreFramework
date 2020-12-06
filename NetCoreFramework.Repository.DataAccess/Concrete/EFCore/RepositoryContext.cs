@@ -1,7 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using NetCoreFramework.Repository.Entities.ComplexTypes;
 using NetCoreFramework.Repository.Entities.Concrete;
-using NetCoreFramework.Repository.Entities.Configurations;
 
 namespace NetCoreFramework.Repository.DataAccess.Concrete.EFCore
 {
@@ -31,9 +30,9 @@ namespace NetCoreFramework.Repository.DataAccess.Concrete.EFCore
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.ApplyConfiguration(new CitiesOfCountriesConfiguration());
-            modelBuilder.ApplyConfiguration(new CityConfiguration());
-            modelBuilder.ApplyConfiguration(new CountryConfiguration());
+            //modelBuilder.ApplyConfiguration(new CitiesOfCountriesConfiguration());
+            //modelBuilder.ApplyConfiguration(new CityConfiguration());
+            //modelBuilder.ApplyConfiguration(new CountryConfiguration());
 
             OnModelCreatingPartial(modelBuilder);
         }

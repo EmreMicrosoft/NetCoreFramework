@@ -4,7 +4,7 @@ using NetCoreFramework.Core.Entities;
 
 namespace NetCoreFramework.Repository.Entities.Concrete
 {
-    public class City : IEntity
+    public partial class City : IEntity
     {
         [Key]
         public int Id { get; set; }
