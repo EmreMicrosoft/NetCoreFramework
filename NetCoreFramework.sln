@@ -21,6 +21,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NetCoreFramework.Core", "Ne
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NetCoreFramework.Repository.Business.Tests", "NetCoreFramework.Repository.Business.Tests\NetCoreFramework.Repository.Business.Tests.csproj", "{E3C5598E-CFA9-4A04-8891-9462149C5F22}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NetCoreFramework.Repository.WebApiCore", "NetCoreFramework.Repository.WebApiCore\NetCoreFramework.Repository.WebApiCore.csproj", "{65A275C4-72E5-4977-A091-71E16854FD7A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NetCoreFramework.Repository.WebApiCoreTests", "NetCoreFramework.Repository.WebApiCoreTests\NetCoreFramework.Repository.WebApiCoreTests.csproj", "{86E9FF42-1041-49F3-BC79-D21D2E1B5298}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -51,6 +55,14 @@ Global
 		{E3C5598E-CFA9-4A04-8891-9462149C5F22}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E3C5598E-CFA9-4A04-8891-9462149C5F22}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E3C5598E-CFA9-4A04-8891-9462149C5F22}.Release|Any CPU.Build.0 = Release|Any CPU
+		{65A275C4-72E5-4977-A091-71E16854FD7A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{65A275C4-72E5-4977-A091-71E16854FD7A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{65A275C4-72E5-4977-A091-71E16854FD7A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{65A275C4-72E5-4977-A091-71E16854FD7A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{86E9FF42-1041-49F3-BC79-D21D2E1B5298}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{86E9FF42-1041-49F3-BC79-D21D2E1B5298}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{86E9FF42-1041-49F3-BC79-D21D2E1B5298}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{86E9FF42-1041-49F3-BC79-D21D2E1B5298}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
