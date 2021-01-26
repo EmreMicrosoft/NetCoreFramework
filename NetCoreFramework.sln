@@ -3,11 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30503.244
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NetCoreFramework.Repository.Entities", "NetCoreFramework.Repository.Entities\NetCoreFramework.Repository.Entities.csproj", "{110AFB42-5083-4DA5-84E3-EE181F8F02C0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Repository.Entities", "Repository.Entities\Repository.Entities.csproj", "{110AFB42-5083-4DA5-84E3-EE181F8F02C0}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NetCoreFramework.Repository.DataAccess", "NetCoreFramework.Repository.DataAccess\NetCoreFramework.Repository.DataAccess.csproj", "{2D8A7E3A-631B-43B0-BF0C-4D1368016A76}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Repository.DataAccess", "Repository.DataAccess\Repository.DataAccess.csproj", "{2D8A7E3A-631B-43B0-BF0C-4D1368016A76}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NetCoreFramework.Repository.Business", "NetCoreFramework.Repository.Business\NetCoreFramework.Repository.Business.csproj", "{832D9DD0-4B85-49F2-8F85-A5439CCAA28F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Repository.Business", "Repository.Business\Repository.Business.csproj", "{832D9DD0-4B85-49F2-8F85-A5439CCAA28F}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{B5C17274-4990-41C7-8D6F-6E4F5B8A9637}"
 	ProjectSection(SolutionItems) = preProject
@@ -15,15 +15,15 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		Readme.md = Readme.md
 	EndProjectSection
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NetCoreFramework.Repository.DataAccess.Tests", "NetCoreFramework.Repository.DataAccess.Tests\NetCoreFramework.Repository.DataAccess.Tests.csproj", "{19240855-C91F-4844-AE04-AFEA330830F1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Repository.DataAccess.Tests", "Repository.DataAccess.Tests\Repository.DataAccess.Tests.csproj", "{19240855-C91F-4844-AE04-AFEA330830F1}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NetCoreFramework.Core", "NetCoreFramework.Core\NetCoreFramework.Core.csproj", "{2ACDEFC1-771C-4D8F-ABA7-0C802BCE2D6B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Core", "Core\Core.csproj", "{2ACDEFC1-771C-4D8F-ABA7-0C802BCE2D6B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NetCoreFramework.Repository.Business.Tests", "NetCoreFramework.Repository.Business.Tests\NetCoreFramework.Repository.Business.Tests.csproj", "{E3C5598E-CFA9-4A04-8891-9462149C5F22}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Repository.Business.Tests", "Repository.Business.Tests\Repository.Business.Tests.csproj", "{E3C5598E-CFA9-4A04-8891-9462149C5F22}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NetCoreFramework.Repository.WebApiCore", "NetCoreFramework.Repository.WebApiCore\NetCoreFramework.Repository.WebApiCore.csproj", "{65A275C4-72E5-4977-A091-71E16854FD7A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Repository.WebApiCore", "Repository.WebApiCore\Repository.WebApiCore.csproj", "{65A275C4-72E5-4977-A091-71E16854FD7A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NetCoreFramework.Repository.WebApiCoreTests", "NetCoreFramework.Repository.WebApiCoreTests\NetCoreFramework.Repository.WebApiCoreTests.csproj", "{86E9FF42-1041-49F3-BC79-D21D2E1B5298}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Repository.WebApiCoreTests", "Repository.WebApiCoreTests\Repository.WebApiCoreTests.csproj", "{86E9FF42-1041-49F3-BC79-D21D2E1B5298}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
