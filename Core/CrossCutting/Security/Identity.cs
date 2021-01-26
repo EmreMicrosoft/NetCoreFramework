@@ -1,6 +1,6 @@
 ﻿using System.Security.Principal;
 
-namespace Core.CrossCuttingConcerns.Security
+namespace Core.CrossCutting.Security
 {
     public class Identity : IIdentity
     {

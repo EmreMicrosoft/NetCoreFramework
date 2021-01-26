@@ -1,6 +1,6 @@
 ﻿using log4net;
 
-namespace Core.CrossCuttingConcerns.Logging
+namespace Core.CrossCutting.Logging
 {
     public abstract class LoggerService
     {

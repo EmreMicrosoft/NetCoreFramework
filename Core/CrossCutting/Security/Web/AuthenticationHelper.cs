@@ -1,4 +1,4 @@
-﻿namespace Core.CrossCuttingConcerns.Security.Web
+﻿namespace Core.CrossCutting.Security.Web
 {
     public class AuthenticationHelper
     {

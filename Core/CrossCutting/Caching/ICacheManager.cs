@@ -1,4 +1,4 @@
-﻿namespace Core.CrossCuttingConcerns.Caching
+﻿namespace Core.CrossCutting.Caching
 {
     public interface ICacheManager
     {

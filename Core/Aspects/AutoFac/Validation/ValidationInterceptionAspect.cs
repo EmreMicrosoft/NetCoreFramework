@@ -2,7 +2,7 @@
 using System.Linq;
 using Castle.DynamicProxy;
 using FluentValidation;
-using Core.CrossCuttingConcerns.Validation.FluentValidaiton;
+using Core.CrossCutting.Validation.FluentValidaiton;
 using Core.Utilities.Intercepters;
 
 namespace Core.Aspects.AutoFac.Validation

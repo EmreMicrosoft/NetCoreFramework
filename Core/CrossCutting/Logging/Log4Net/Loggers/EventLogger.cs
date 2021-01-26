@@ -1,6 +1,6 @@
 ﻿using log4net;
 
-namespace Core.CrossCuttingConcerns.Logging.Log4Net.Loggers
+namespace Core.CrossCutting.Logging.Log4Net.Loggers
 {
     public class EventLogger : LoggerService
     {

@@ -1,4 +1,4 @@
-﻿namespace Core.CrossCuttingConcerns.Logging
+﻿namespace Core.CrossCutting.Logging
 {
     public class LogParameter
     {

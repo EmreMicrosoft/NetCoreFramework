@@ -1,6 +1,6 @@
 ﻿using System.Diagnostics;
-using Core.CrossCuttingConcerns.Caching;
-using Core.CrossCuttingConcerns.Caching.Microsoft;
+using Core.CrossCutting.Caching;
+using Core.CrossCutting.Caching.Microsoft;
 using Core.Utilities.IoC;
 using Microsoft.Extensions.DependencyInjection;
 using Core.DataAccess;

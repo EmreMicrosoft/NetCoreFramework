@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Linq;
 using Castle.DynamicProxy;
-using Core.CrossCuttingConcerns.Logging;
+using Core.CrossCutting.Logging;
 using Core.Utilities.Intercepters;
 
 namespace Core.Aspects.AutoFac.Logging
