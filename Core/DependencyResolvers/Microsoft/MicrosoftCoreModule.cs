@@ -14,8 +14,7 @@ namespace Core.DependencyResolvers.Microsoft
         {
             service.AddScoped(typeof(IEntityRepository<>), typeof(EfEntityRepositoryBase<,>));
             service.AddScoped(typeof(IViewRepository<>), typeof(EfViewRepositoryBase<,>));
-            service.AddScoped(typeof(IEntityRepository<>), typeof(EfEntityRepositoryBase<,>));
-            service.AddScoped(typeof(IQueryableRepository<>), typeof(EfViewRepositoryBase<,>));
+            service.AddScoped(typeof(IQueryableRepository<>), typeof(EfQueryableRepositoryBase<>));
 
 
             service.AddMemoryCache();
